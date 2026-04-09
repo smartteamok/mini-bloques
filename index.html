@@ -4,6 +4,9 @@
   <meta charset="utf-8"/>
   <title>STEAM Pathfinder (embed)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --frame-w: 380px;   /* ancho del frame embebible */
@@ -11,7 +14,7 @@
       --pad: 8px;         /* padding del canvas */
     }
     html, body { height: 100%; margin: 0; }
-    body { font-family: system-ui, sans-serif; background: #fff; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Signika', system-ui, sans-serif; background: #fff; -webkit-font-smoothing: antialiased; }
     * { -webkit-user-select:none; user-select:none; }
 
     .wrap {
@@ -305,11 +308,11 @@
     function drawLetterCell(L) {
       const px = PAD + L.x*CELL, py = PAD + L.y*CELL;
       const litColor = L.color || '#6f6f6e'; // apagado
-      ctx.fillStyle = L.lit ? litColor : '#fff7cc';
+      ctx.fillStyle = L.lit ? litColor : '#6f6f6e';
       ctx.fillRect(px+2, py+2, CELL-4, CELL-4);
 
-      ctx.fillStyle = '#1f2937';
-      ctx.font = 'bold 32px system-ui';
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '700 32px "Signika", system-ui, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(L.ch, px + CELL/2, py + CELL/2);
@@ -361,6 +364,7 @@
     function showWinModal() { backdrop.classList.add('show'); }
 
     drawBoard();
+    if (document.fonts?.ready) document.fonts.ready.then(() => drawBoard());
     setStatus('Arma tu programa y presiona ▶');
 
     // ======= Ejecución con animaciones suaves =======

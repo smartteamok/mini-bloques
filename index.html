@@ -157,7 +157,7 @@
       init: function() {
         this.appendDummyInput().appendField("Programa");
         this.setNextStatement(true);
-        this.setColour("#ffc634");
+        this.setColour("#fcbc0d");
         this.setDeletable(false);
         this.setMovable(true);
         this.setInputsInline(true);
@@ -169,7 +169,7 @@
         this.appendDummyInput()
           .appendField(new Blockly.FieldImage(ICON_MOVE_URL, 24, 24, '*'))
           .appendField("avanza");
-        this.setPreviousStatement(true); this.setNextStatement(true); this.setColour("#9966FF");
+        this.setPreviousStatement(true); this.setNextStatement(true); this.setColour("#8068ab");
       }
     };
     Blockly.Blocks['turn_left'] = {
@@ -177,7 +177,7 @@
         this.appendDummyInput()
           .appendField(new Blockly.FieldImage(ICON_LEFT_URL, 24, 24, '*'))
           .appendField("izquierda");
-        this.setPreviousStatement(true); this.setNextStatement(true); this.setColour("#9966FF");
+        this.setPreviousStatement(true); this.setNextStatement(true); this.setColour("#8068ab");
       }
     };
     Blockly.Blocks['turn_right'] = {
@@ -185,7 +185,7 @@
         this.appendDummyInput()
           .appendField(new Blockly.FieldImage(ICON_RIGHT_URL, 24, 24, '*'))
           .appendField("derecha");
-        this.setPreviousStatement(true); this.setNextStatement(true); this.setColour("#9966FF");
+        this.setPreviousStatement(true); this.setNextStatement(true); this.setColour("#8068ab");
       }
     };
 
@@ -232,11 +232,11 @@
 
     // Colores por letra (fácil de cambiar luego)
     const LETTER_COLORS = {
-      S: '#c7e0ff',  // azul claro
-      T: '#ffd6a5',  // durazno
-      E: '#c8f7c5',  // verde claro
-      A: '#ffe3e3',  // rosado claro
-      M: '#e7d5ff'   // violeta claro
+      S: '#8068ab',  // violeta
+      T: '#48c0ed',  // celeste
+      E: '#fcbc0d',  // amarillo
+      A: '#5db45c',  // verde
+      M: '#e94566'   // rojo
     };
 
     function lightIfLetter(x, y) {
@@ -304,7 +304,7 @@
 
     function drawLetterCell(L) {
       const px = PAD + L.x*CELL, py = PAD + L.y*CELL;
-      const litColor = L.color || '#fff7cc'; // apagado
+      const litColor = L.color || '#6f6f6e'; // apagado
       ctx.fillStyle = L.lit ? litColor : '#fff7cc';
       ctx.fillRect(px+2, py+2, CELL-4, CELL-4);
 
